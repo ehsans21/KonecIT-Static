@@ -1,0 +1,13 @@
+1. Create backend
+    create DB module for:
+        Wiki
+        ToDo
+        Checklist
+        Infrastructure
+        Inventory
+        Technician
+        Career
+    connect BE with the FE
+2. redesign with react-bootstrap
+3. add hebrew and arabic
+4. add new features

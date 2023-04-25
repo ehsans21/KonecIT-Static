@@ -1,7 +1,9 @@
+import { t } from "i18next";
+
 export default function Home() {
     return (
         <div className="home">
-            <h2>Welcome</h2>
+            <h2>{t("Welcome")}</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis lacus eget gravida accumsan.
                 Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam dapibus fringilla nunc, non feugiat mauris blandit a.
                 Sed laoreet eget nunc vitae pulvinar. Nunc scelerisque dui urna, luctus suscipit risus aliquam ac.

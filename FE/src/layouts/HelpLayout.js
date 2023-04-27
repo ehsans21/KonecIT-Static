@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-function HelpLayout() {
+export default function HelpLayout() {
     return (
         <div className='help-layout'>
 
@@ -19,4 +19,3 @@ function HelpLayout() {
     )
 }
 
-export default HelpLayout

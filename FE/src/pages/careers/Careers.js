@@ -1,4 +1,5 @@
 import { useLoaderData, Link } from "react-router-dom";
+import data from "./Data.json"
 
 export default function Careers() {
     const careers = useLoaderData()
@@ -16,7 +17,7 @@ export default function Careers() {
 
 // loader function
 export const careersLoader = async () => {
-    const res = await fetch('http://localhost:4000/careers')
+    const res = await fetch(data)
 
     if (!res.ok) {
         throw Error("Could not fetch the careers")

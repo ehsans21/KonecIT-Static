@@ -2,12 +2,13 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 
 // pages
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./pages/about/About";
 import Faq from "./pages/help/Faq";
 import Contact, { contactAction } from "./pages/help/Contact";
 import Careers from "./pages/careers/Careers";
 import CareersDetails, { careerDetailsLoader } from "./pages/careers/CareersDetails";
 import CareersError from "./pages/careers/CareersError";
+import Services from "./pages/about/Services";
 
 
 
@@ -17,6 +18,7 @@ import HelpLayout from "./layouts/HelpLayout";
 import NotFound from "./pages/NotFound";
 import CareersLayout from "./layouts/CareersLayout"
 import { careersLoader } from "./pages/careers/Careers";
+
 
 
 const router = createBrowserRouter(
@@ -31,7 +33,9 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="about" element={<About />} />
+      <Route path="about" element={<About />} >
+        <Route path="services" element={<Services />} />
+      </Route>
 
       <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />

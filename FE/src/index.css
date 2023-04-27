@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
   --primary: #bc4123;
@@ -40,6 +41,17 @@ button {
   cursor: pointer;
 }
 
+/* cards */
+.card {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 6px;
+  background: rgba(185, 185, 185, 0.8);
+}
+
 /* navbar */
 header nav {
   display: flex;
@@ -75,14 +87,16 @@ main {
 }
 
 /* help layout */
-.help-layout nav {
+.help-layout nav,
+.about nav {
   display: flex;
   justify-content: center;
   gap: 30px;
   margin: 30px 0;
 }
 
-.help-layout nav a {
+.help-layout nav a,
+.about nav a {
   padding: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
@@ -90,12 +104,22 @@ main {
   background: #bbb;
 }
 
-.help-layout nav a:hover {
+.help-layout nav a:hover,
+.about nav a:hover {
   border-color: var(--primary);
 }
 
-.help-layout nav a.active {
+.help-layout nav a.active,
+.about nav a.active {
   background: var(--primary);
+}
+
+/* services */
+.services .serdesc {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
 }
 
 /* faq */
@@ -166,7 +190,8 @@ form label span {
 }
 
 /* careers details */
-.career-details {
+.career-details,
+.about-details {
   background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 4px;

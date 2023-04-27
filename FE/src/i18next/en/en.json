@@ -1,4 +1,32 @@
-{
-    "Welcome": "Welcome to Konecit IT services"
-}
-
+    {
+        "Home": "Home",
+        "Careers": "Careers",
+        "Help": "Help",
+        "Welcome": "Welcome to Konecit IT services",
+        "Body": "Get periodic maintenance with high quality and permanent follow-up. We care about your work",
+        "About": "Who are we",
+        "About Title": "We offer the best service to our customers",
+        "About body": "We provide maintenance service from 2001 to our customers",
+        "About desc": "The maintenance service is considered one of the most required services with the best experience, with more than 10 years of dedication and sincerity.",
+        "maintenance":"maintenance",
+        "maintenance_desc": "The maintenance service is considered one of the most requested services that ignites the best experiences with more than 10 years of dedication and sincerity",
+        "Networks": "Networks",
+        "Networks_desc": "The maintenance service is considered one of the most requested services that ignites the best experiences with more than 10 years of dedication and sincerity",
+        "Infosec":"Information Security",
+        "Infosec_desc": "The maintenance service is considered one of the most requested services that ignites the best experiences with more than 10 years of dedication and sincerity",
+        "techsupport":"Technical support",
+        "techsupport_desc": "The maintenance service is considered one of the most requested services that ignites the best experiences with more than 10 years of dedication and sincerity",
+        "workwithus":"Start working with us",
+        "services": "Services",
+        "services_title":"We provide the best services",
+        "services_desc":"We have more than 30 high quality services",
+        "steps": "Steps",
+        "howto_workwithus": "How is the work done",
+        "howto_workwithus_steps":"In these three points, we show you the stages of work and communication with us",
+        "req_service":"Service request",
+        "req_service_desc":"The first stage begins with a service request by filling out the service request form",
+        "contract_negotiation":"Contract Negotiations",
+        "contract_negotiation_desc":"The negotiations about the service takes place in consideration of the required time, time, and price, and all the details of the service are determined, and this can be done over the phone or through the website.",
+        "start_services":"Start providing the service",
+        "start_services_desc":"Once the negotiations is over, we start providing the service"
+    }

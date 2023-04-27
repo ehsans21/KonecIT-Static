@@ -16,7 +16,7 @@ export default function RespoNav() {
         <Navbar.Brand href="/">KonecIT</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <NavLink to="/">{t("Home")}</NavLink>
             <NavLink to="careers">{t("Careers")}</NavLink>
             <NavLink to="about">{t("About")}</NavLink>

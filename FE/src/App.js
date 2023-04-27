@@ -6,7 +6,6 @@ import About from "./pages/about/About";
 import Faq from "./pages/help/Faq";
 import Contact, { contactAction } from "./pages/help/Contact";
 import Careers from "./pages/careers/Careers";
-import CareersDetails, { careerDetailsLoader } from "./pages/careers/CareersDetails";
 import CareersError from "./pages/careers/CareersError";
 import Services from "./pages/about/Services";
 
@@ -28,8 +27,7 @@ const router = createBrowserRouter(
 
 
       <Route path="careers" element={<CareersLayout />} errorElement={<CareersError />} >
-        <Route index element={<Careers />} loader={careersLoader} />
-        <Route path=":id" element={<CareersDetails />} loader={careerDetailsLoader} />
+        <Route index element={<Careers />} />
       </Route>
 
 

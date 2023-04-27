@@ -2,7 +2,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --primary: #bc4123;
+  --primary: #c8e1eabf;
   --secondary: #ffffff;
 }
 
@@ -37,38 +37,11 @@ button {
   padding: 8px;
   border-radius: 4px;
   color: white;
-  background: var(--primary);
+  /* background: var(--primary); */
   cursor: pointer;
 }
 
-/* cards */
-.card {
-  display: flex;
-  gap: 16px;
-  justify-content: end;
-  max-width: auto;
-  margin: 0 auto;
-  padding: 6px;
-  background: rgba(185, 185, 185, 0.8);
-}
-
 /* navbar */
-header nav {
-  display: flex;
-  gap: 16px;
-  justify-content: end;
-  max-width: auto;
-  margin: 0 auto;
-  padding: 6px;
-  background: rgb(22, 22, 23, 0.8);
-}
-
-header nav h1 {
-  margin-right: auto;
-  border-bottom: 3px solid var(--primary);
-  color: rgba(255, 255, 255, 0.8);
-}
-
 header nav a {
   text-decoration: none;
   padding: 6px;
@@ -76,8 +49,11 @@ header nav a {
   color: rgba(255, 255, 255, 0.8);
 }
 
-header nav a.active {
-  background: var(--primary);
+header nav a:hover {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+  color: rgba(231, 220, 220, 0.8);
 }
 
 /* page content */
@@ -101,7 +77,7 @@ main {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
   text-decoration: none;
-  background: #bbb;
+  background: #ffffff;
 }
 
 .help-layout nav a:hover,

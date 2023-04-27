@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { t } from "i18next";
-import LanguageSwitcher from "../components/Langswitch";
-import NavBar from "../components/navbar";
+
+import RespoNav from "../components/navbar";
+
 
 export default function RootLayout() {
     const currentYear = new Date().getFullYear();
@@ -12,12 +13,7 @@ export default function RootLayout() {
     return (
         <div className='root-layout'>
             <header>
-                <nav>
-                    <h1>KonecIT</h1>
-                    <NavBar />
-                    <LanguageSwitcher />
-                </nav>
-
+                    <RespoNav />
                 <Breadcrumbs />
             </header>
             <main>

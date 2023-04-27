@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import {NavLink} from "react-router-dom";
 import { t } from "i18next";
 import Dropdown from 'react-bootstrap/Dropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import { useTranslation } from "react-i18next";
 
@@ -20,18 +21,18 @@ export default function RespoNav() {
             <NavLink to="careers">{t("Careers")}</NavLink>
             <NavLink to="about">{t("About")}</NavLink>
             <NavLink to="help">{t("Help")}</NavLink>
+            <NavDropdown title="Language" id="collasible-nav-dropdown">
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('ar')}>العربية</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('en')}>English</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('he')}>עברית</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Dropdown>
-<Dropdown.Toggle variant="success" id="dropdown-basic">Language</Dropdown.Toggle>
 
-<Dropdown.Menu>
-    <Dropdown.Item onClick={() => i18n.changeLanguage('ar')}>العربية</Dropdown.Item>
-    <Dropdown.Item onClick={() => i18n.changeLanguage('en')}>English</Dropdown.Item>
-    <Dropdown.Item onClick={() => i18n.changeLanguage('he')}>עברית</Dropdown.Item>
-</Dropdown.Menu>
-</Dropdown>
       </Container>
     </Navbar>
   );
 }
+
+
+

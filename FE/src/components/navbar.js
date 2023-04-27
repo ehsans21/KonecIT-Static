@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export default function RespoNav() {
   const { t, i18n } = useTranslation();
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="white" variant="white">
       <Container>
         <Navbar.Brand href="/">KonecIT</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

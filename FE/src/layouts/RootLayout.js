@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RespoNav from "../components/navbar";
+import Hero from "../components/Hero";
 
 
 export default function RootLayout() {
@@ -12,6 +13,7 @@ export default function RootLayout() {
         <div className='root-layout'>
             <header>
                 <RespoNav />
+                
                 <Breadcrumbs />
             </header>
             <main>

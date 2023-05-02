@@ -1,27 +1,39 @@
-import { useLoaderData, Link } from "react-router-dom";
-import data from "./Data.json"
+import { Card } from "react-bootstrap";
+import careers from "./data";
+import image from "../../images/tech.jpg"
 
-export default function Careers() {
-    const careers = useLoaderData()
+// function createCard(career) {
+//     return (
+//         <Card
+//             key={career.id}
+//             img={image}
+//             title={career.title}
+//             details={career.details}
+//             location={career.location}
+//         />
+//     )
+// }
+
+export default function Careers(career) {
     return (
         <div className="careers">
-            {careers.map(career => (
-                <Link to={career.id.toString()} key={career.id}>
-                    <p>{career.title}</p>
-                    <p>Based in {career.location}</p>
-                </Link>
-            ))}
+            {careers.map((career) => {
+                return (
+                    <div key={career.id}>
+                <Card className="mb-3" style={{ color: "#000" }}>
+                <Card.Img src={image}/>
+                <Card.Body>
+                    <Card.Title>
+                        {career.title}
+                    </Card.Title>
+                    <Card.Text>Requirements: {career.details}</Card.Text>
+                    <Card.Text>Location: {career.location}</Card.Text>
+                </Card.Body>
+            </Card>
+            </div>
+            )
+            })}
+
         </div>
-    )
-}
-
-// loader function
-export const careersLoader = async () => {
-    const res = await fetch(data)
-
-    if (!res.ok) {
-        throw Error("Could not fetch the careers")
-    }
-
-    return res.json()
+    );
 }

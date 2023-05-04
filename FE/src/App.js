@@ -1,4 +1,6 @@
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+
 
 // pages
 import Home from "./pages/Home";
@@ -46,10 +48,17 @@ const router = createBrowserRouter(
 )
 
 function App() {
-  return (
+  const {t, i18n } = useTranslation();
+  document.body.dir = i18n.dir();
+    
+    return (
+      
+      <div className="App">
+        {t('welcome')}
+        <RouterProvider router={router} />   
+      </div>
 
-
-    <RouterProvider router={router} />
+   
 
   );
 }

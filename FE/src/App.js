@@ -54,7 +54,7 @@ function App() {
     return (
       
       <div className="App">
-        {t('welcome')}
+        
         <RouterProvider router={router} />   
       </div>
 

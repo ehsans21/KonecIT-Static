@@ -1,28 +1,32 @@
-import { Outlet } from "react-router-dom";
-import Breadcrumbs from "../components/Breadcrumbs";
-import RespoNav from "../components/navbar";
-import Hero from "../components/Hero";
-
+import { Outlet } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RespoNav from '../components/navbar';
 
 export default function RootLayout() {
-    const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
+  return (
+    <div className="root-layout" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <header>
+        <RespoNav />
+        <Breadcrumbs />
+      </header>
 
+      <main style={{ flex: 1 }}>
+        <Outlet />
+      </main>
 
-    return (
-        <div className='root-layout'>
-            <header>
-                <RespoNav />
-                
-                <Breadcrumbs />
-            </header>
-            <main>
-                <Outlet />
-            </main>
-
-            <footer>
-                <p>Copyright © {currentYear} KonecIT. All rights reserved</p>
-            </footer>
-        </div>
-    );
+      <footer className="site-footer">
+        <Container>
+          <div className="footer-brand">Konec<span>IT</span></div>
+          <p>{t('footer_desc')}</p>
+          <hr className="footer-divider" />
+          <p className="footer-copy">© {currentYear} KonecIT. {t('copyright')}</p>
+        </Container>
+      </footer>
+    </div>
+  );
 }

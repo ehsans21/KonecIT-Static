@@ -1,21 +1,32 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 export default function HelpLayout() {
-    return (
-        <div className='help-layout'>
+  const { t } = useTranslation();
 
-            <h2>Website Help</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis lacus eget gravida accumsan. Interdum</p>
+  return (
+    <div>
+      <div className="page-header">
+        <Container>
+          <h1>{t('Help')}</h1>
+          <p>{t('faq_desc')}</p>
+        </Container>
+      </div>
 
-            <nav>
-                <NavLink to="faq">View the FAQ</NavLink>
-                <NavLink to="contact">Contact Us</NavLink>
-            </nav>
-
-            <Outlet />
-
-        </div>
-
-    )
+      <div className="section">
+        <Container>
+          <div className="help-tabs">
+            <NavLink to="faq" className={({ isActive }) => 'help-tab-link' + (isActive ? ' active' : '')}>
+              {t('view_faq')}
+            </NavLink>
+            <NavLink to="contact" className={({ isActive }) => 'help-tab-link' + (isActive ? ' active' : '')}>
+              {t('contact_us')}
+            </NavLink>
+          </div>
+          <Outlet />
+        </Container>
+      </div>
+    </div>
+  );
 }
-

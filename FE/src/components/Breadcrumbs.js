@@ -1,26 +1,41 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 export default function Breadcrumbs() {
-    const location = useLocation()
+  const location = useLocation();
 
-    // /help/contact --> help | contact
+  if (location.pathname === '/') return null;
 
-    let currentLink = ""
+  let currentLink = '';
 
-    const crumbs = location.pathname.split("/")
-        .filter(crumb => crumb !== "")
-        .map(crumb => {
-            currentLink += `/${crumb}`
+  const crumbs = location.pathname
+    .split('/')
+    .filter(c => c !== '')
+    .map((crumb, index, arr) => {
+      currentLink += `/${crumb}`;
+      const isLast = index === arr.length - 1;
 
-            return (
-                <div className="crumb" key={crumb}>
-                    <Link to={currentLink}>{crumb}</Link>
-                </div>
-            )
-        })
+      return (
+        <span key={crumb} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {!isLast ? (
+            <>
+              <Link to={currentLink}>{crumb}</Link>
+              <span className="crumb-sep">/</span>
+            </>
+          ) : (
+            <span className="crumb-current">{crumb}</span>
+          )}
+        </span>
+      );
+    });
 
-    return (
-        <div className="breadcrumbs">{crumbs}</div>
-    )
+  return (
+    <div className="breadcrumbs-bar">
+      <Container>
+        <Link to="/">Home</Link>
+        {crumbs.length > 0 && <span className="crumb-sep">/</span>}
+        {crumbs}
+      </Container>
+    </div>
+  );
 }
-

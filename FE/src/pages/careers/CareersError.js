@@ -1,14 +1,19 @@
-import { Link, useRouteError } from "react-router-dom"
+import { Link, useRouteError } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 export default function CareersError() {
-    const error = useRouteError()
-    
-    return (
-        <div className="careers-error">
-            <h2>Error</h2>
-            <p>{error.message}</p>
-            <Link to="/">Back to the homepage</Link>
-        </div>
-    )
-}
+  const error = useRouteError();
 
+  return (
+    <Container>
+      <div className="not-found">
+        <div>
+          <h1>⚠️</h1>
+          <h2>Something went wrong</h2>
+          <p>{error?.message || 'An unexpected error occurred.'}</p>
+          <Link to="/" className="btn-hero">Back to Home</Link>
+        </div>
+      </div>
+    </Container>
+  );
+}

@@ -1,39 +1,27 @@
-import { Card } from "react-bootstrap";
-import careers from "./data";
-import image from "../../images/tech.jpg"
+import { useTranslation } from 'react-i18next';
+import { Row, Col } from 'react-bootstrap';
+import careers from './data';
 
-// function createCard(career) {
-//     return (
-//         <Card
-//             key={career.id}
-//             img={image}
-//             title={career.title}
-//             details={career.details}
-//             location={career.location}
-//         />
-//     )
-// }
+export default function Careers() {
+  const { t } = useTranslation();
 
-export default function Careers(career) {
-    return (
-        <div className="careers">
-            {careers.map((career) => {
-                return (
-                    <div key={career.id}>
-                <Card className="mb-3" style={{ color: "#000" }}>
-                <Card.Img src={image}/>
-                <Card.Body>
-                    <Card.Title>
-                        {career.title}
-                    </Card.Title>
-                    <Card.Text>Requirements: {career.details}</Card.Text>
-                    <Card.Text>Location: {career.location}</Card.Text>
-                </Card.Body>
-            </Card>
+  return (
+    <Row className="g-4">
+      {careers.map((job) => (
+        <Col key={job.id} xs={12} md={6}>
+          <div className="job-card">
+            <span className="job-type-badge">{t(job.type)}</span>
+            <h5>{job.title}</h5>
+            <div className="job-meta">
+              <span>📍 {job.location}</span>
             </div>
-            )
-            })}
-
-        </div>
-    );
+            <p><strong>{t('requirements')}:</strong> {job.requirements}</p>
+            <a href={`mailto:careers@konecit.com?subject=Application for ${job.title}`} className="btn-apply">
+              {t('apply_now')}
+            </a>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  );
 }

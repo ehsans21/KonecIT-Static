@@ -1,47 +1,29 @@
-import { t } from "i18next";
+import { useTranslation } from 'react-i18next';
+
+const steps = [
+  { num: '01', titleKey: 'req_service',          descKey: 'req_service_desc' },
+  { num: '02', titleKey: 'contract_negotiation',  descKey: 'contract_negotiation_desc' },
+  { num: '03', titleKey: 'start_services',        descKey: 'start_services_desc' },
+];
 
 export default function Services() {
-    return (
-        <div className="services">
-                <h3>{t("services_title")}</h3>
+  const { t } = useTranslation();
 
-                <div className="serdesc">
-                    <p>{t("services_desc")}</p>
-                </div>
+  return (
+    <div style={{ marginTop: '2.5rem' }}>
+      <p className="section-label">{t('steps')}</p>
+      <h3 className="section-title" style={{ marginBottom: '0.5rem' }}>{t('howto_workwithus')}</h3>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>{t('howto_workwithus_steps')}</p>
 
-                <div className="serdesc">
-                    <p>{t("howto_workwithus")}</p>
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("howto_workwithus_steps")}</p>
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("req_service")}</p>
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("req_service_desc")}</p>
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("contract_negotiation")}</p>
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("contract_negotiation_desc")}</p>
-
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("start_services")}</p>
-
-                </div>
-
-                <div className="serdesc">
-                    <p>{t("start_services_desc")}</p>
-                </div>
+      {steps.map(({ num, titleKey, descKey }) => (
+        <div key={num} className="process-step">
+          <div className="process-step-num">{num}</div>
+          <div className="process-step-content">
+            <h5>{t(titleKey)}</h5>
+            <p>{t(descKey)}</p>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
